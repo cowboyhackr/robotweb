@@ -1,0 +1,9 @@
+{
+  "name": "robot-web",
+  "description": "talking to robots",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.6.1"
+  }
+}
