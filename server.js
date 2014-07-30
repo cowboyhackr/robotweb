@@ -10,15 +10,16 @@ app.get('/', function (req, res) {
   res.send('Hello from the robots')
 });
 
+//example ~/api/command?command=turn%20100%201
 app.get('/api/command', function(req,res){
 	//send command to rabbitmq
 
-	console.log('in api/command');ß
-	//console.log(JSON.stringify(req.query));
+	console.log('in api/command');
+	console.log(JSON.stringify(req.query));
 
 	if(req && req.query && req.query.command){
 		var command = req.query.command;
-		//console.log(req.query.command);
+		console.log(req.query.command);
 		var q = 'tilt';
 		var url = process.env.AMQP_CONN;
 
