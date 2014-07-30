@@ -15,8 +15,8 @@ app.get('/api/command', function(req,res){
 
 	var command = req.query.command;
 	console.log(req.query.command);
-	var q = 'tilt2';
-	var url = process.env.AMQP_CONN;
+	var q = 'tilt';
+	var url = process.env.AMQP_CONN.toString();
 
 	console.log("connecting to... " + url);
 	var open = require('amqplib').connect(url);
