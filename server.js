@@ -8,7 +8,7 @@ var moment = require('moment');
 
 app.get('/', function (req, res) {
   res.send('Hello from the robots')
-})
+});
 
 app.get('/api/command', function(req,res){
 	//send command to rabbitmq
@@ -57,5 +57,5 @@ app.get('/api/command', function(req,res){
 
 //listen (start app with node server.js)
 app.listen(process.env.PORT || 3000);
-console.log("App listening on port 8080");
+console.log("App listening on port " + process.env.PORT);
 
