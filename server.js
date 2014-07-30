@@ -3,7 +3,7 @@
 var express = require('express');
 var app = express();
 var moment = require('moment');
-var config = require('./config')
+//var config = require('./config')
 
 
 app.get('/', function (req, res) {
@@ -16,7 +16,7 @@ app.get('/api/command', function(req,res){
 	var command = req.query.command;
 	console.log(req.query.command);
 	var q = 'tilt2';
-	var url = config.amqp.url;
+	var url = process.env.AMQP_CONN;
 
 	console.log("connecting to... " + url);
 	var open = require('amqplib').connect(url);
