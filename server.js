@@ -13,7 +13,10 @@ app.get('/', function (req, res) {
 app.get('/api/command', function(req,res){
 	//send command to rabbitmq
 
-	var command = req.query.command.toString();
+	console.log(JSON.stringify(req));
+	
+
+	var command = req.query.command;
 	console.log(req.query.command);
 	var q = 'tilt';
 	var url = process.env.AMQP_CONN.toString();
