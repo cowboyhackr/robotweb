@@ -5,6 +5,8 @@ var app = express();
 var moment = require('moment');
 //var config = require('./config')
 
+app.use(express.static(__dirname + '/public')); 
+
 
 app.get('/', function (req, res) {
   res.send('Hello from the robots')
@@ -57,6 +59,7 @@ app.get('/api/command', function(req,res){
 
 
 //listen (start app with node server.js)
-app.listen(process.env.PORT || 3000);
-console.log("App listening on port " + process.env.PORT);
+var port = process.env.PORT || 3000;
+app.listen(port);
+console.log("App listening on port " + port);
 
