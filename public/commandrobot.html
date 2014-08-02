@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>Command Robot</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="callrobot.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="SendRobotCommand2">
+			<p>What? {{greeting}}</p>
+		</div>
+
+		    Write some text in textbox:
+    <input type="text" ng-model="sometext" />
+ 
+    <h1>Hello {{ sometext }}</h1>
+	</body>
+</html>
