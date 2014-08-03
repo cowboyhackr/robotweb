@@ -13,7 +13,7 @@
 <body ng-app="submitExample">
    <script>
    angular.module('submitExample', [])
-     .controller('ExampleController', ['$scope', function($scope, $http) {
+     .controller('ExampleController', ['$scope', '$http', function($scope, $http) {
        $scope.list = [];
        $scope.text = 'hello';
        $scope.submit = function() {
@@ -27,13 +27,13 @@
               success(function(data, status, headers, config) {
                 // this callback will be called asynchronously
                 // when the response is available
-                $scope.greeting = data;
+                //$scope.greeting = data;
                 console.log('success');
               }).
               error(function(data, status, headers, config) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
-                $scope.greeting = data;
+                //$scope.greeting = data;
                 console.log('fail');
               });
          }
