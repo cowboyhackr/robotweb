@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TILT visual</title>
+  
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
+  
+
+  
+</head>
+<body ng-app="submitExample" ng-controller="ExampleController">
+   <script>
+   angular.module('submitExample', [])
+     .controller('ExampleController', ['$scope', '$http', function($scope, $http) {
+       $scope.list = [];
+       $scope.text = 'hello';
+       $scope.submit = function() {
+         if ($scope.text) {
+            $scope.list.push(this.text);
+            var test = 'this is a test';
+            console.log(test);
+            var target = 'http://fierce-beach-8075.herokuapp.com/api/command?command=' + this.text.toString();
+            console.log(target);
+            $http({method: 'GET', url: target}).
+              success(function(data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                //$scope.greeting = data;
+                console.log('success');
+              }).
+              error(function(data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                //$scope.greeting = data;
+                console.log('fail');
+              });
+         }
+       };
+
+         $scope.up = function() {
+          console.log('up');
+/*         if ($scope.text) {
+            $scope.list.push(this.text);
+            var test = 'this is a test';
+            console.log(test);
+            var target = 'http://fierce-beach-8075.herokuapp.com/api/command?command=' + this.text.toString();
+            console.log(target);
+            $http({method: 'GET', url: target}).
+              success(function(data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                //$scope.greeting = data;
+                console.log('success');
+              }).
+              error(function(data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                //$scope.greeting = data;
+                console.log('fail');
+              });
+         }*/
+       };
+
+                $scope.down = function() {
+          console.log('down');
+/*         if ($scope.text) {
+            $scope.list.push(this.text);
+            var test = 'this is a test';
+            console.log(test);
+            var target = 'http://fierce-beach-8075.herokuapp.com/api/command?command=' + this.text.toString();
+            console.log(target);
+            $http({method: 'GET', url: target}).
+              success(function(data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                //$scope.greeting = data;
+                console.log('success');
+              }).
+              error(function(data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                //$scope.greeting = data;
+                console.log('fail');
+              });
+         }*/
+       };
+
+                $scope.right = function() {
+          console.log('right');
+/*         if ($scope.text) {
+            $scope.list.push(this.text);
+            var test = 'this is a test';
+            console.log(test);
+            var target = 'http://fierce-beach-8075.herokuapp.com/api/command?command=' + this.text.toString();
+            console.log(target);
+            $http({method: 'GET', url: target}).
+              success(function(data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                //$scope.greeting = data;
+                console.log('success');
+              }).
+              error(function(data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                //$scope.greeting = data;
+                console.log('fail');
+              });
+         }*/
+       };
+
+                $scope.left = function() {
+          console.log('left');
+/*         if ($scope.text) {
+            $scope.list.push(this.text);
+            var test = 'this is a test';
+            console.log(test);
+            var target = 'http://fierce-beach-8075.herokuapp.com/api/command?command=' + this.text.toString();
+            console.log(target);
+            $http({method: 'GET', url: target}).
+              success(function(data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                //$scope.greeting = data;
+                console.log('success');
+              }).
+              error(function(data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                //$scope.greeting = data;
+                console.log('fail');
+              });
+         }*/
+       };
+     }]);
+ </script>
+<!--  <form ng-submit="submit()" ng-controller="ExampleController"> -->
+  <!--  <input type="text" ng-model="text" name="text" /> -->
+    <img src="../assets/up.png" ng-click="up()">
+    <img src="../assets/down.png" ng-click="down()">
+    <img src="../assets/right.png" ng-click="right()">
+    <img src="../assets/left.png" ng-click="left()">
+   <pre>list={{list}}</pre>
+<!--  </form> -->
+</body>
+</html>
+</html>
