@@ -3,6 +3,8 @@
 var express = require('express');
 var app = express();
 var moment = require('moment');
+var RobotQueue = require('./robotqueue');
+
 //var config = require('./config')
 
 app.use(express.static(__dirname + '/public')); 
@@ -26,9 +28,15 @@ app.get('/api/command', function(req,res){
 		var url = process.env.AMQP_CONN;
 
 		console.log("connecting to... " + url);
-		var open = require('amqplib').connect(url);
+		if(RobotQueue.connection === 'empty'){
+			RobotQueue.connection = require('amqplib').connect(url);
+			console.log('creating connection to queue');
+		}else{
+			console.log('found connection to queue');
+		}
 
-		open.then(function(conn) {
+
+		RobotQueue.connection.then(function(conn) {
 		  var ok = conn.createConfirmChannel();
 		  ok = ok.then(function(ch) {
 		    ch.assertQueue(q);
