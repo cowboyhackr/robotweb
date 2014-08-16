@@ -89,7 +89,7 @@
 
                 $scope.right = function() {
           console.log('right');
-          var command = 'turn ' + this.text.toString() + ' 1';
+          var command = 'turn ' + this.text.toString() + ' -1';
          if ($scope.text) {
             $scope.list.push(command);
             console.log(command);
@@ -113,7 +113,7 @@
 
                 $scope.left = function() {
           console.log('left');
-          var command = 'turn ' + this.text.toString() + ' -1';
+          var command = 'turn ' + this.text.toString() + ' 1';
          if ($scope.text) {
             $scope.list.push(command);
             console.log(command);
